@@ -256,10 +256,10 @@ export default function BioPage() {
                       </svg>
                     </div>
                     <a
-                      href="mailto:juuso.s.tuomaala@gmail.com"
+                      href="mailto:juuso@tuomaa.la"
                       className="text-sm sm:text-base text-foreground/80 hover:text-foreground transition-colors break-all"
                     >
-                      juuso.s.tuomaala@gmail.com
+                      juuso@tuomaa.la
                     </a>
                   </div>
                   <div className="flex items-center gap-3 sm:gap-4">

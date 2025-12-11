@@ -53,10 +53,10 @@ export default function ContactPage() {
                 </svg>
               </div>
               <a
-                href="mailto:juuso.s.tuomaala@gmail.com"
+                href="mailto:juuso@tuomaa.la"
                 className="text-base sm:text-lg text-foreground/80 hover:text-foreground transition-colors break-all"
               >
-                juuso.s.tuomaala@gmail.com
+                juuso@tuomaa.la
               </a>
             </div>
             <div className="flex items-center gap-4 sm:gap-6">
