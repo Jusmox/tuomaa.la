@@ -7,9 +7,9 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   const toggleMenu = () => {
@@ -19,6 +19,7 @@ export function Navigation() {
   const closeMenu = () => {
     setIsMenuOpen(false)
   }
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-foreground/10">
@@ -78,24 +79,24 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-foreground/10">
-            <ul className="py-4 space-y-2">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="block px-4 py-2 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition-colors rounded-lg"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {/* Mobile Navigation Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden border-t border-foreground/10">
+              <ul className="py-4 space-y-2">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={closeMenu}
+                      className="block px-4 py-2 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition-colors rounded-lg"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
       </div>
     </nav>
   )
