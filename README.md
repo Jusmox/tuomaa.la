@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
+100% vibed btw.
+
 ## Features
 
 - **Static Site Generation**: Optimized for fast loading with Next.js static export
