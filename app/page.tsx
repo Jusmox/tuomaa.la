@@ -29,7 +29,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto space-y-8 sm:space-y-10">
             <div className="bg-foreground/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-foreground/10 shadow-sm">
               <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed m-0">
-                I'm a creator passionate about combining <span className="font-semibold text-foreground">technology</span>, <span className="font-semibold text-foreground">design</span>, and <span className="font-semibold text-foreground">craftsmanship</span>. I love learning new things, exploring emerging technologies, and discovering new ways to create, including 3D designing. My work spans embedded systems, IoT, digital fabrication, and woodworking, with a focus on turning ideas into functional and visually compelling projects.
+                I&apos;m a creator passionate about combining <span className="font-semibold text-foreground">technology</span>, <span className="font-semibold text-foreground">design</span>, and <span className="font-semibold text-foreground">craftsmanship</span>. I love learning new things, exploring emerging technologies, and discovering new ways to create, including 3D designing. My work spans embedded systems, IoT, digital fabrication, and woodworking, with a focus on turning ideas into functional and visually compelling projects.
               </p>
             </div>
             
@@ -44,7 +44,7 @@ export default function Home() {
             
             <div className="bg-gradient-to-r from-foreground/5 to-transparent rounded-xl p-6 sm:p-8 border border-foreground/10">
               <p className="text-base sm:text-lg text-foreground/70 leading-relaxed m-0">
-                If you're interested in <span className="font-medium text-foreground">custom 3D prints</span>, <span className="font-medium text-foreground">illustrations</span>, or <span className="font-medium text-foreground">laser-marked/cut creations</span>, you can reach out via the channels listed on the <a href="/contact" className="font-semibold text-foreground hover:text-foreground/80 transition-colors underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground/60">contact page</a>.
+                If you&apos;re interested in <span className="font-medium text-foreground">custom 3D prints</span>, <span className="font-medium text-foreground">illustrations</span>, or <span className="font-medium text-foreground">laser-marked/cut creations</span>, you can reach out via the channels listed on the <a href="/contact" className="font-semibold text-foreground hover:text-foreground/80 transition-colors underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground/60">contact page</a>.
               </p>
             </div>
           </div>
