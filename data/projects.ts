@@ -31,11 +31,11 @@ Results and impact:
         'ESP32',
         'IoT',
         'Sensors',
-        'Embedded C/C++',
+        'Embedded Systems',
         'PCB Design',
         '3D Printing',
         'Node-RED',
-        'Telegram Bot',
+        'Telegram Bot API',
       ],
     date: '2025-09',
     category: 'IoT & Embedded Systems',
@@ -110,8 +110,7 @@ Results and impact:
 
 Note: Images provided are limited and censored due to privacy reasons.`,
     technologies: [
-      'Laser Engraving',
-      'Laser Cutting',
+      'Laser Marking & Cutting',
       'QGIS',
       'Adobe Photoshop',
       'Adobe Illustrator',
@@ -244,10 +243,8 @@ Notes:
     longDescription: `This project involved 3D printing a detailed moon lithophane. I found the base model online and remixed the design to ensure it would fit a standard lamp socket. To add modern functionality and versatility, I integrated a Philips Hue bulb, allowing for adjustable brightness and a full spectrum of colors.`,
     technologies: [
       '3D Printing',
-      'Lithophane',
+      '3D Design',
       'Philips Hue',
-      'Smart Lighting',
-      '3D Modeling/Remixing'
     ],
     date: '2023-11',
     category: '3D Printing, Smart Home',
@@ -260,10 +257,10 @@ Notes:
     shortDescription: 'A Raspberry Pi-powered smart mirror featuring a handcrafted oak frame and custom data modules.',
     longDescription: `Based on the MagicMirror² open-source platform, this project involved repurposing an old monitor into a functional smart mirror. The display consists of a plexiglass screen coated with one-way mirror film. The frame was hand-crafted from oak and finished using a vinegar and steel wool stain for a unique, aged aesthetic. To improve energy efficiency, I integrated a PIR motion sensor to toggle the display. The interface is customized to show a shared Google Calendar, real-time electricity prices, weather, news, and a rotating list of messages.`,
     technologies: [
-      'Raspberry Pi 2',
+      'Raspberry Pi',
       'MagicMirror²',
       'JavaScript',
-      'PIR Motion Sensor',
+      'Sensors',
       'Woodworking',
       'API Integration'
     ],
@@ -279,9 +276,8 @@ Notes:
     longDescription: `Based on the "Malolo's Screw-less Snap-fit" design, this project served as an intensive exercise in 3D modeling and mechanical tolerances. While maintaining the original snap-fit mechanism, I redesigned the rest of the chassis to incorporate a custom school logo and improve the overall fit. The project focused on mastering real-world 3D printing constraints to ensure a secure, "click-in" assembly without the need for hardware.`,
     technologies: [
       '3D Printing',
-      '3D Modeling',
-      'CAD',
-      'Prototyping',
+      '3D Design',
+      'Rapid Prototyping',
       'Raspberry Pi'
     ],
     date: '2024-09',
@@ -298,7 +294,7 @@ Notes:
       '3D Printing',
       'LED Circuitry',
       'Power Management',
-      'Embedded Sensors',
+      'Sensors',
       'Product Design'
     ],
     date: '2025-02',
@@ -314,9 +310,7 @@ Notes:
     technologies: [
       '3D Design',
       '3D Printing',
-      'Geotagging',
       'Rapid Prototyping',
-      'Outdoor Materials'
     ],
     date: '2025-04',
     category: '3D Design, 3D Printing, Art',
@@ -345,11 +339,9 @@ Notes:
     shortDescription: 'Hybrid business cards featuring laser-marked graphics, QR codes, and embedded RFID chips.',
     longDescription: `An experimental project focused on mastering laser marking techniques across different materials. These smart calling cards integrate physical and digital networking: each card features a laser-marked QR code and an internal RFID chip, both programmed to link directly to my online CV. The project evolved through two iterations: the first generation utilized white plastic RFID cards, while the second generation transitioned to a more tactile wooden RFID medium.`,
     technologies: [
-      'Laser Marking',
+      'Laser Marking & Cutting',
       'RFID',
-      'QR Code Integration',
-      'NFC',
-      'Material Science (Plastic/Wood)'
+      'NFC/QR Codes',
     ],
     date: '2025-12',
     category: 'Embedded Systems, IoT, Digital Fabrication',
@@ -382,8 +374,7 @@ Notes:
       'Arduino Nano',
       'Soldering',
       '3D Design',
-      'Laser Marking',
-      'In-print Part Insertion'
+      'Laser Marking & Cutting',
     ],
     date: '2026-01',
     category: 'Electronics, IoT, 3D Design',
