@@ -10,6 +10,19 @@ interface ProjectModalProps {
   project: Project | null
 }
 
+/**
+ * Formats a date from YYYY-MM format to MM/YY format
+ * @param date - Date string in YYYY-MM format (e.g., '2025-09')
+ * @returns Formatted date string in MM/YY format (e.g., '09/25')
+ */
+function formatDate(date: string): string {
+  const match = date.match(/^(\d{4})-(\d{2})$/)
+  if (!match) return date
+  const [, year, month] = match
+  const shortYear = year.slice(-2)
+  return `${month}/${shortYear}`
+}
+
 export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   useEffect(() => {
     if (isOpen) {
@@ -55,7 +68,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
           <div>
             <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
             {project.date && (
-              <p className="text-sm text-foreground/70 mt-1">{project.date}</p>
+              <p className="text-sm text-foreground/70 mt-1">{formatDate(project.date)}</p>
             )}
           </div>
           <button

@@ -14,9 +14,10 @@ export default function ProjectsPage() {
   // Sort projects by date (newest first)
   const sortedProjects = useMemo(() => {
     return [...projects].sort((a, b) => {
-      const dateA = parseInt(a.date || '0')
-      const dateB = parseInt(b.date || '0')
-      return dateB - dateA // Descending order (newest first)
+      const dateA = a.date || '0000-00'
+      const dateB = b.date || '0000-00'
+      // YYYY-MM format sorts correctly as strings (newest first)
+      return dateB.localeCompare(dateA)
     })
   }, [])
 
