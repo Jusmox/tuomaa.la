@@ -10,16 +10,37 @@ import type { Project } from '@/types/project'
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null)
 
-  // Sort projects by date (newest first)
+  // Sort projects by date (newest first) and filter by technology
   const sortedProjects = useMemo(() => {
-    return [...projects].sort((a, b) => {
+    let filtered = [...projects]
+    
+    // Filter by technology if one is selected
+    if (selectedTechnology) {
+      filtered = filtered.filter((project) =>
+        project.technologies.includes(selectedTechnology)
+      )
+    }
+    
+    return filtered.sort((a, b) => {
       const dateA = a.date || '0000-00'
       const dateB = b.date || '0000-00'
       // YYYY-MM format sorts correctly as strings (newest first)
       return dateB.localeCompare(dateA)
     })
-  }, [])
+  }, [selectedTechnology])
+
+  const handleTechnologyClick = (tech: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation() // Prevent project card click
+    }
+    setSelectedTechnology(tech === selectedTechnology ? null : tech)
+  }
+
+  const handleClearFilter = () => {
+    setSelectedTechnology(null)
+  }
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
@@ -40,7 +61,20 @@ export default function ProjectsPage() {
             Projects
           </h2>
           <p className="text-base sm:text-lg text-foreground/70 mb-8 sm:mb-10 text-center px-2 max-w-2xl mx-auto">
-            Click on any project to view more details
+            {selectedTechnology ? (
+              <>
+                Showing projects with <span className="font-semibold">{selectedTechnology}</span>
+                {' '}
+                <button
+                  onClick={handleClearFilter}
+                  className="text-foreground underline hover:no-underline"
+                >
+                  Clear filter
+                </button>
+              </>
+            ) : (
+              'Click on any project to view more details, or click a technology tag to filter'
+            )}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -83,12 +117,17 @@ export default function ProjectsPage() {
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <span
+                        <button
                           key={tech}
-                          className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-foreground/10 rounded-full"
+                          onClick={(e) => handleTechnologyClick(tech, e)}
+                          className={`px-2 sm:px-3 py-1 text-xs sm:text-sm rounded-full transition-colors ${
+                            selectedTechnology === tech
+                              ? 'bg-foreground text-background'
+                              : 'bg-foreground/10 hover:bg-foreground/20'
+                          }`}
                         >
                           {tech}
-                        </span>
+                        </button>
                       ))}
                       {project.technologies.length > 3 && (
                         <span className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-foreground/10 rounded-full">
@@ -126,6 +165,7 @@ export default function ProjectsPage() {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         project={selectedProject}
+        onTechnologyClick={handleTechnologyClick}
       />
     </main>
   )

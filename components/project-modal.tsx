@@ -8,6 +8,7 @@ interface ProjectModalProps {
   isOpen: boolean
   onClose: () => void
   project: Project | null
+  onTechnologyClick?: (tech: string) => void
 }
 
 /**
@@ -23,7 +24,7 @@ function formatDate(date: string): string {
   return `${month}/${shortYear}`
 }
 
-export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+export function ProjectModal({ isOpen, onClose, project, onTechnologyClick }: ProjectModalProps) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -68,7 +69,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
           <div>
             <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
             {project.date && (
-              <p className="text-sm text-foreground/70 mt-1">{formatDate(project.date)}</p>
+              <p className="text-sm text-foreground/70 mt-1">Project last edited: {formatDate(project.date)}</p>
             )}
           </div>
           <button
@@ -143,12 +144,25 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             <h4 className="text-lg font-semibold mb-3">Technologies</h4>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1.5 text-sm bg-foreground/10 rounded-full"
-                >
-                  {tech}
-                </span>
+                onTechnologyClick ? (
+                  <button
+                    key={tech}
+                    onClick={() => {
+                      onTechnologyClick(tech)
+                      onClose()
+                    }}
+                    className="px-3 py-1.5 text-sm bg-foreground/10 hover:bg-foreground/20 rounded-full transition-colors"
+                  >
+                    {tech}
+                  </button>
+                ) : (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 text-sm bg-foreground/10 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                )
               ))}
             </div>
           </div>
